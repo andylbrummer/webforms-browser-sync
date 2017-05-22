@@ -3,7 +3,8 @@ var gulp = require('gulp'),
 
 var paths = {
 	css: ['site/testSite/Content/*.css'],
-	js: ['site/testSite/Scripts/**/*.js']
+	js: ['site/testSite/Scripts/**/*.js'],
+	content: ['site/testSite/bin/*.*', 'site/testSite/**/*.aspx', 'site/testSite/**/*.ascx', 'site/testSite/**/*.Master']
 }
 
 gulp.task('css-reload', function() {
@@ -19,6 +20,7 @@ gulp.task('browser-sync', function() {
 gulp.task('watch', function() {
 	gulp.watch(paths.css, ['css-reload']);
 	gulp.watch(paths.js).on('change', browserSync.reload);
+	gulp.watch(paths.content).on('change', browserSync.reload);
 });
 
 
