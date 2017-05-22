@@ -1,0 +1,1 @@
+﻿$("<div class='message'>Typing is hard.</div>").appendTo('body');
