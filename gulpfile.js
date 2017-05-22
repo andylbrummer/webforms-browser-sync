@@ -1,8 +1,24 @@
 var gulp = require('gulp'),
     browserSync = require('browser-sync').create();
 
-gulp.task('default', function() {
+var paths = {
+	css: [ 'site/testSite/Content/*.css'],
+	js: []
+}
+
+gulp.task('css-reload', function() {
+	gulp.src(paths.css).pipe(browserSync.stream({match: '**/*.css'}))
+});
+
+gulp.task('browser-sync', function() {
     browserSync.init({
         proxy: 'http://localhost:52015'
     });
 });
+
+gulp.task('watch', function() {
+	gulp.watch(paths.css, ['css-reload']);
+});
+
+
+gulp.task('default', ['browser-sync', 'watch']);
