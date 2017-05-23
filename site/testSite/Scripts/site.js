@@ -1,1 +1,1 @@
-﻿$("<div class='message'>Typing is hard.</div>").appendTo('body');
+$("<div class='message'><span>Typing</span><span>is</span><span>hard</span></div>").appendTo('body');
