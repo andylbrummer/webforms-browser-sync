@@ -2,9 +2,9 @@ var gulp = require('gulp'),
     browserSync = require('browser-sync').create();
 
 var paths = {
-	css: ['site/testSite/Content/*.css'],
-	js: ['site/testSite/Scripts/**/*.js'],
-	content: ['site/testSite/bin/*.*', 'site/testSite/**/*.aspx', 'site/testSite/**/*.ascx', 'site/testSite/**/*.Master']
+	css: ['Content/*.css'],
+	js: ['Scripts/**/*.js'],
+	content: ['bin/*.*', '**/*.aspx', '**/*.ascx', '**/*.Master']
 }
 
 gulp.task('css-reload', function() {
